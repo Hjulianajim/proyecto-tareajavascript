@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promedio de edades por turno</title>
+    <script>
+        function calcularPromedios() {
+            var edadesManana = [];
+            var edadesTarde = [];
+            var edadesNoche = [];
+
+            // Ingreso de edades de estudiantes del turno mañana
+            for (var i = 0; i < 5; i++) {
+                var edad = parseInt(prompt("Ingrese la edad del estudiante del turno mañana #" + (i + 1)));
+                edadesManana.push(edad);
+            }
+
+            // Ingreso de edades de estudiantes del turno tarde
+            for (var i = 0; i < 6; i++) {
+                var edad = parseInt(prompt("Ingrese la edad del estudiante del turno tarde #" + (i + 1)));
+                edadesTarde.push(edad);
+            }
+
+            // Ingreso de edades de estudiantes del turno noche
+            for (var i = 0; i < 11; i++) {
+                var edad = parseInt(prompt("Ingrese la edad del estudiante del turno noche #" + (i + 1)));
+                edadesNoche.push(edad);
+            }
+
+            // Cálculo de promedios
+            var promedioManana = calcularPromedio(edadesManana);
+            var promedioTarde = calcularPromedio(edadesTarde);
+            var promedioNoche = calcularPromedio(edadesNoche);
+
+            // Impresión de promedios
+            document.getElementById("promedio-manana").innerHTML = "Promedio de edades del turno mañana: " + promedioManana.toFixed(2);
+            document.getElementById("promedio-tarde").innerHTML = "Promedio de edades del turno tarde: " + promedioTarde.toFixed(2);
+            document.getElementById("promedio-noche").innerHTML = "Promedio de edades del turno noche: " + promedioNoche.toFixed(2);
+
+            // Determinar el turno con el promedio más alto
+            var turnoConPromedioMayor = "";
+            var promedioMayor = Math.max(promedioManana, promedioTarde, promedioNoche);
+
+            if (promedioMayor === promedioManana) {
+                turnoConPromedioMayor = "mañana";
+            } else if (promedioMayor === promedioTarde) {
+                turnoConPromedioMayor = "tarde";
+            } else {
+                turnoConPromedioMayor = "noche";
+            }
+
+            document.getElementById("promedio-mayor").innerHTML = "El turno con el promedio de edades más alto es el turno " + turnoConPromedioMayor;
+        }
+
+        function calcularPromedio(edades) {
+            var sumaEdades = 0;
+
+            for (var i = 0; i < edades.length; i++) {
+                sumaEdades += edades[i];
+            }
+
+            var promedio = sumaEdades / edades.length;
+
+            return promedio;
+        }
+    </script>
+</head>
+<body>
+    <h1>Promedio de edades por turno</h1>
+    <button onclick="calcularPromedios()">Calcular promedios</button><br><br>
+
+    <div id="promedio-manana"></div>
+    <div id="promedio-tarde"></div>
+    <div id="promedio-noche"></div

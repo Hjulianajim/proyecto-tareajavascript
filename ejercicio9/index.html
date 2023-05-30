@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Análisis de valores enteros</title>
+    <script>
+        function analizarValores() {
+            var valores = [];
+            var cantidadNegativos = 0;
+            var cantidadPositivos = 0;
+            var cantidadMultiplos15 = 0;
+            var valorAcumuladoPares = 0;
+
+            for (var i = 0; i < 10; i++) {
+                var valor = parseInt(prompt("Ingrese el valor #" + (i + 1)));
+
+                valores.push(valor);
+
+                if (valor < 0) {
+                    cantidadNegativos++;
+                } else if (valor > 0) {
+                    cantidadPositivos++;
+                }
+
+                if (valor % 15 === 0) {
+                    cantidadMultiplos15++;
+                }
+
+                if (valor % 2 === 0) {
+                    valorAcumuladoPares += valor;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = "Cantidad de valores negativos: " + cantidadNegativos + "<br>" +
+                                                              "Cantidad de valores positivos: " + cantidadPositivos + "<br>" +
+                                                              "Cantidad de múltiplos de 15: " + cantidadMultiplos15 + "<br>" +
+                                                              "Valor acumulado de números pares: " + valorAcumuladoPares;
+        }
+    </script>
+</head>
+<body>
+    <h1>Análisis de valores enteros</h1>
+    <button onclick="analizarValores()">Ingresar valores</button><br><br>
+
+    <div id="resultado"></div>
+</body>
+</html>

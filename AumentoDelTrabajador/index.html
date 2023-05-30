@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aumento salarial</title>
+    <script>
+        function calcularAumento() {
+            var nombre = document.getElementById("nombre").value;
+            var salario = parseFloat(document.getElementById("salario").value);
+            var categoria = document.getElementById("categoria").value;
+            var aumento = 0;
+
+            switch (categoria) {
+                case "A":
+                aumento = salario * 0.15;
+                 break;
+                case "B":
+                aumento = salario * 0.3;
+                break;
+                case "C":
+                 aumento = salario * 0.1;
+                  break;
+                case "D":
+                aumento = salario * 0.2;
+                 break;
+                default:
+                 aumento = 0;
+                break;
+            }
+
+            var nuevoSalario = salario + aumento;
+
+            document.getElementById("datos-empleado").innerHTML = "Nombre: " + nombre + "<br>" +
+            "Salario actual: $" + salario.toFixed(2) + "<br>" +
+            "Categoría: " + categoria + "<br>" +
+             "Aumento salarial: $" + aumento.toFixed(2) + "<br>" +
+             "Nuevo salario: $" + nuevoSalario.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Aumento salarial</h1>
+    <label for="nombre">Nombre del empleado:</label>
+    <input type="text" id="nombre"><br><br>
+
+    <label for="salario">Salario actual:</label>
+    <input type="number" id="salario" step="0.01"><br><br>
+
+    <label for="categoria">Categoría:</label>
+    <select id="categoria">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select><br><br>
+
+    <button onclick="calcularAumento()">Calcular aumento</button><br><br>
+
+    <div id="datos-empleado"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+</head>
+<body>
+    <input type="" id="edad" class="edad">
+    <button onclick="verificaredad()">Ver Edad</button>
+</body>
+<script>
+    function verificaredad(){
+        let edad = document.querySelector('#edad').value; 
+        if(edad >= 18){
+            alert("Eres mayor de edad");
+        }else{
+            alert("Eres menor de edad");
+        }
+    }
+</script>
+</html>

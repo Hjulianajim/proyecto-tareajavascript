@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nota final  del alumno </title>
+</head>
+<body>
+    <h2>Promedio de Notas en HTML y JavaScript </h2>
+    <p>nombre <input type="text"id="nombre"></p>
+    <p>carnet <input type="text" id="carnet"></p>
+    
+    <p>nota 1<input type="text" id="n1"></p>
+    <p>nota 2 <input type="text" id="n2"></p>
+    <p>nota 3 <input type="text" id="n3"></p>
+    <p>nota 4 <input type="text" id="n4"></p>
+    <p><input type="button" value="calcular" onclick="calcularpromedio()"></p>
+    <p id="promedio"></p>
+</body>
+<script>
+    function calcularpromedio(){
+    var v1 =  document.getElementById("n1").value;
+    var v2 = document.getElementById("n2").value;
+    var v3 = document.getElementById("n3").value;
+    var v4 = document.getElementById("n4").value;
+    var pro = (parseFloat(v1 * 0.20)+parseFloat(v2*0.40)+parseFloat(v3*0.40)+parseFloat(v4*0.45))/4;
+    document.getElementById("promedio").innerHTML= pro; 
+    }
+</script>
+</html>
+
+    
